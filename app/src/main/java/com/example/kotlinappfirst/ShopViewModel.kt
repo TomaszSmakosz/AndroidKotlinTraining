@@ -25,5 +25,7 @@ class ShopViewModel(application: Application) : AndroidViewModel(application) {
         repository.insert(product)
     }
 
-
+    fun insertOrUpdate(product: Product) = viewModelScope.launch(Dispatchers.IO){
+        repository.insertOrUpdate(product)
+    }
 }
